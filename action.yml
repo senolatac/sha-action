@@ -23,7 +23,9 @@ runs:
         distribution: ${{ inputs.java-distribution }}
         cache: gradle
     - name: Run tests
-      run: ./gradlew --no-daemon --stacktrace test
+      uses: gradle/gradle-build-action@v2
+      with:
+        arguments: test
     - name: Run codacy-coverage-reporter
       uses: codacy/codacy-coverage-reporter-action@v1
       with:
