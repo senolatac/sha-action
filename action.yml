@@ -27,6 +27,7 @@ runs:
       with:
         arguments: test
     - name: Run codacy-coverage-reporter
+      if: github.ref != 'refs/heads/master'
       uses: codacy/codacy-coverage-reporter-action@v1
       with:
         project-token: ${{ inputs.codacy-project-token }}
