@@ -24,7 +24,6 @@ runs:
         cache: gradle
     - name: Run tests
       run: ./gradlew --no-daemon --stacktrace test
-      uses: actions/setup-java@v3
     - name: Run codacy-coverage-reporter
       uses: codacy/codacy-coverage-reporter-action@v1
       with:
